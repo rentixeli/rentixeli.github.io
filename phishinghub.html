@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+        h1 {text-align: center; color: white}
+		h2 {color: white}
+        p {text-align: left; color: white;}
+        div {text-align: center;}
+
+        body {
+          background-image: url('https://www.billboard.com/wp-content/uploads/media/britney-spears-oops-i-did-it-again-video-2000-billboard-650.jpg?w=650');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+        }
+        .button {
+            background-color: transparent; /* Green */
+            border: transparent;
+            color: transparent;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 4px 2px;
+            cursor: default;
+          }
+          
+          .button1 {font-size: 10px;}
+          .button2 {font-size: 12px;}
+          .button3 {font-size: 16px;}
+          .button4 {font-size: 20px;}
+          .button5 {font-size: 500px;}
+        </style>
+
+</head>
+
+<body onLoad="type_text()">
+<script>
+    var myMusic= document.getElementById("music");
+        
+    function play() {
+        
+        myMusic.play();
+    }
+</script>
+           <h1 style=font-size:400%;">Oops.. I did it again!</h1>
+        
+<script language="Javascript">
+var tl=new Array(
+"It seems like you fell for phishing..",
+"",
+"Well... Luckily for you, It's a phishing drill.",
+"I'm here to explain to you what went wrong.",
+"",
+"1) Check the domain...",
+"   Your'e working for hubsecurity.",
+"   Not for hubse cru ity",
+"",
+"2) Did you verify the sender's email address?",
+"",
+"3) .com? what happend to .io????",
+"",
+"Anyway. Your'e safe now.",
+"But I won't be there to save you next time amigo.."
+);
+var speed=100;
+var index=0; text_pos=0;
+var str_length=tl[0].length;
+var contents, row;
+
+function type_text()
+{
+contents='';
+row=Math.max(0,index-40);
+while(row<index)
+contents += tl[row++] + '\r\n';
+document.forms[0].elements[0].value = contents + tl[index].substring(0,text_pos) + "_";
+if(text_pos++==str_length)
+{
+text_pos=0;
+index++;
+if(index!=tl.length)
+{
+str_length=tl[index].length;
+setTimeout("type_text()",300);
+}
+} else
+setTimeout("type_text()",speed);
+}
+</script>
+<p align="center">
+<form><textarea style="width:400px; height:400px; border:0px solid gray; resize:none; background-color:pink;color:black; outline:0; padding:50px; border-radius:30px; -webkit-box-shadow:0px 0px 20px 1px gray;" name="about" readonly="readonly"
+wrap="soft"></textarea></form></p>
+</div></center>
+</center>
+<h2>Click play for full experience!<br></h2>
+    <audio controls id="music">
+        <source src="mj.mp3" type="audio/mpeg" autoplay>
+        
+        Your browser does not support the audio element.
+        </audio>
+</body>
+
+</html>
